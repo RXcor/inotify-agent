@@ -1,0 +1,17 @@
+[Unit]
+Description=smc-notify
+After=all.target
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+StartLimitInterval=0
+StartLimitBurst=0
+ExecStart=/w/m/smc-notify/venv/bin/python3 -m agent
+WorkingDirectory=/w/m/smc-notify
+PIDFile=/run/smc-notify-blue.pid
+ExecStop=/bin/kill -s QUIT $MAINPID
+
+[Install]
+WantedBy=multi-user.target

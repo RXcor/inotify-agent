@@ -1,0 +1,6 @@
+destination_root_archive_dir: "/d/raw"
+local_root_archive_dir: "/d/video"
+port: 2221
+identity_file: "/home/jetson/smc-notify/.cre/id_rsa"
+host: "sftp@194.226.171.230"
+command_result_mqtt_topic_name: "/command_responses"
